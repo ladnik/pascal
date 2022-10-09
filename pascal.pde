@@ -1,5 +1,5 @@
-//Graphical representation of the Sierpinski-Triangle based on Pascal's Triangle and modulo
-//operations on the values of the binomial coefficients
+//Graphical representation of the Sierpiński triangle based on Pascal's triangle and modulo
+//operations on the binomial coefficients
 
 int rectWidth = 20, rectHeight = 20;
 int maxDivisor = 10;                        //maximum modulo divisor that should be used
