@@ -23,15 +23,6 @@
 	  ],
       "windows": {
         "type": "process",
-        "options": {
-          "shell": {
-            "executable": "cmd.exe",
-            "args": [
-              "/d",
-              "/c"
-            ]
-          }
-        },
         "args": [
           "--force",
           {
