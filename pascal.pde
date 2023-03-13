@@ -2,7 +2,8 @@
 //operations on the binomial coefficients
 
 int rectWidth = 20, rectHeight = 20;
-int maxDivisor = 10;                        //maximum modulo divisor that should be used
+int MAX_DIVISOR = 10;                        //maximum modulo divisor that should be used
+int MAX_N_ROWS = 675;                       //max number of rows which should be displayed
 
 String[][] binomials = new String[0][];
 
@@ -18,14 +19,17 @@ int COLOR_RED = 1;
 int COLOR_BLUE = 2;
 int COLOR_GREEN = 3;
 
-int MAX_N_ROWS = 44;                        //max number of rows for which the calculations can fit into the long data type (8 byte)
-
 //Some arbitrarly set bounds for nice scaling
+
+//lower number means zoomed out, bigger number zoomed in
 int ZOOM_UPPER_BOUND = 80;                  //biggest rectWidth for which zooming in should be available
-int ZOOM_LOWER_BOUND = 20;                  //smallest rectWidth for which zooming out should be available
+int ZOOM_LOWER_BOUND = 2;                   //smallest rectWidth for which zooming out should be available (do not go below 2 without changing zoomfactors)
+
+int MAX_BOUND_SHOW_TEXT = 40;               //lowest rectWidt for which text should be displayed, disregarding SHOW_NUMBERS
 
 float ZOOM_FACTOR_BIGGER = 2;               //factor with which rectWidth is multiplied on zooming in
 float ZOOM_FACTOR_SMALLER = 0.5;            //factor with which rectWidth is multiplied on zooming out
+
 
 
 void setup()
@@ -49,7 +53,7 @@ void draw() {
 void drawBoxesWithMouseMapping() {
     //Map mouse movement to the row count of the triangle and the divisor
     int rows = int(map(mouseY, 0, height, 0, height / rectHeight));
-    int divisor = int(map(mouseX, 0, width, 1, maxDivisor));
+    int divisor = int(map(mouseX, 0, width, 1, MAX_DIVISOR));
     
     if (rows >= MAX_N_ROWS) {
         textSize(20);
@@ -79,7 +83,7 @@ void drawBoxes(int nRows, int mod)
             float x = startX + j * rectWidth;
             float y = rectHeight * i;
             
-            int colorNum = int(binomials[i - 1][j]) % mod;
+            int colorNum = int(Long.parseLong(binomials[i - 1][j]) % mod);
             
             int filler = int(map(colorNum, 0, mod - 1, 0, 250));
             int fillerR = int(map(colorNum, 0, mod - 1, 128, 250));
@@ -87,7 +91,8 @@ void drawBoxes(int nRows, int mod)
             int fillerB = int(map(colorNum, 0, mod - 1, 128, 250));
             
             if (colorNum < 0)
-                print("\ni: " + i + ", j: " + j + " " + int(binomials[i - 1][j]));
+                //print("\ni: " + i + ", j: " + j + " " + int(binomials[i - 1][j]));
+               ;
             
             switch(colorMode) {
                 case 0:
@@ -110,7 +115,7 @@ void drawBoxes(int nRows, int mod)
                 stroke(10);
             rect(x, y, rectWidth, rectHeight);
             
-            if (SHOW_NUMBERS) {
+            if (SHOW_NUMBERS && nRows < MAX_BOUND_SHOW_TEXT) {
                 fill(0);
                 textAlign(CENTER, CENTER);
                 textSize(rectHeight / 2);
@@ -158,6 +163,7 @@ void generateBinomials(int nRows, String[][] binomTbl) {
         binomTbl[i] = row;
     }
 }
+
 
 //Controls
 void mouseWheel(MouseEvent event) {
