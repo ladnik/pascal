@@ -2,7 +2,7 @@
 //operations on the binomial coefficients
 
 int rectWidth = 20, rectHeight = 20;
-int MAX_DIVISOR = 10;                        //maximum modulo divisor that should be used
+int MAX_DIVISOR = 10;                       //maximum modulo divisor that should be used
 int MAX_N_ROWS = 675;                       //max number of rows which should be displayed
 
 String[][] binomials = new String[0][];
@@ -19,9 +19,10 @@ int COLOR_RED = 1;
 int COLOR_BLUE = 2;
 int COLOR_GREEN = 3;
 
-//Some arbitrarly set bounds for nice scaling
 
+//Some arbitrarly set bounds for nice scaling
 //lower number means zoomed out, bigger number zoomed in
+
 int ZOOM_UPPER_BOUND = 80;                  //biggest rectWidth for which zooming in should be available
 int ZOOM_LOWER_BOUND = 2;                   //smallest rectWidth for which zooming out should be available (do not go below 2 without changing zoomfactors)
 
@@ -29,7 +30,6 @@ int MAX_BOUND_SHOW_TEXT = 40;               //lowest rectWidt for which text sho
 
 float ZOOM_FACTOR_BIGGER = 2;               //factor with which rectWidth is multiplied on zooming in
 float ZOOM_FACTOR_SMALLER = 0.5;            //factor with which rectWidth is multiplied on zooming out
-
 
 
 void setup()
