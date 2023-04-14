@@ -33,3 +33,14 @@ Further details are explained in the code's comments.
 ### Executing the exported executables
 - For Windows, download [_windows-amd64.zip_](https://drive.google.com/file/d/1WZ3vVElOBs_OoMSV99iolk9R3EkGAkXC/view?usp=sharing), unzip it and run _pascal.exe_
 - For Linux, download [_linux-amd64.zip_](https://drive.google.com/file/d/1SdQHCxz3ilUYnVSmslv1OT9tFql1IixR/view?usp=sharing), unzip it and run _pascal_
+
+
+## Examples
+
+1. Borders and numbers displayed, color scheme 2, mod 6
+
+![program screenshot 1](https://raw.githubusercontent.com/ladnik/pascal/master/data/pascal_1.jpg "program screenshot")
+
+2. Borders and numbers not displayed, color scheme 1, mod 3
+
+![program screenshot 2](https://raw.githubusercontent.com/ladnik/pascal/master/data/pascal_2.jpg "program screenshot")
