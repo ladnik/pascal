@@ -2,6 +2,8 @@
 Graphical representation of the Sierpiński triangle based on Pascal's triangle and modulo operations on the binomial coefficients.
 Implemented in Processing, a visualization and animation language and framework based on Java.
 
+If you have any questions regarding this project or ideas on improving it, feel free to contact me.
+
 ## Mathematical background
 > The Sierpiński triangle is a fractal attractive fixed set with the overall shape of an equilateral triangle, subdivided recursively into smaller equilateral triangles. Originally constructed as a curve, this is one of the basic examples of self-similar sets—that is, it is a mathematically generated pattern that is reproducible at any magnification or reduction. It is named after the Polish mathematician Wacław Sierpiński, but appeared as a decorative pattern many centuries before the work of Sierpiński. [[Wikipedia]](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
 
@@ -29,5 +31,5 @@ Further details are explained in the code's comments.
 - A new window running the application should open
 
 ### Executing the exported executables
-- For Windows, download _windows-amd64.zip_, unzip it and run _pascal.exe_
-- For Linux, download _linux-amd64.zip_, unzip it and run _pascal_
+- For Windows, download [_windows-amd64.zip_](https://drive.google.com/file/d/1WZ3vVElOBs_OoMSV99iolk9R3EkGAkXC/view?usp=sharing), unzip it and run _pascal.exe_
+- For Linux, download [_linux-amd64.zip_](https://drive.google.com/file/d/1SdQHCxz3ilUYnVSmslv1OT9tFql1IixR/view?usp=sharing), unzip it and run _pascal_
