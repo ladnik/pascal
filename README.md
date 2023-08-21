@@ -31,8 +31,8 @@ Further details are explained in the code's comments.
 - A new window running the application should open
 
 ### Executing the exported executables
-- For Windows, download [_windows-amd64.zip_](https://drive.google.com/file/d/1WZ3vVElOBs_OoMSV99iolk9R3EkGAkXC/view?usp=sharing), unzip it and run _pascal.exe_
-- For Linux, download [_linux-amd64.zip_](https://drive.google.com/file/d/1SdQHCxz3ilUYnVSmslv1OT9tFql1IixR/view?usp=sharing), unzip it and run _pascal_
+- For Windows, download [_windows-amd64.zip_](https://drive.google.com/file/d/1WZ3vVElOBs_OoMSV99iolk9R3EkGAkXC/view?usp=sharing), unzip it and run _pascal.exe_.
+- For Linux, download [_linux-amd64.zip_](https://drive.google.com/file/d/1SdQHCxz3ilUYnVSmslv1OT9tFql1IixR/view?usp=sharing), unzip it and run _pascal_ (or open it in a terminal and run `chmod +x pascal` and `./pascal`).
 
 
 ## Examples
