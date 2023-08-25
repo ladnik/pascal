@@ -31,8 +31,8 @@ Further details are explained in the code's comments.
 - A new window running the application should open
 
 ### Executing the exported executables
-- For Windows, download [_windows-amd64.zip_](https://drive.google.com/file/d/1WZ3vVElOBs_OoMSV99iolk9R3EkGAkXC/view?usp=sharing), unzip it and run _pascal.exe_.
-- For Linux, download [_linux-amd64.zip_](https://drive.google.com/file/d/1SdQHCxz3ilUYnVSmslv1OT9tFql1IixR/view?usp=sharing), unzip it and run _pascal_ (or open it in a terminal and run `chmod +x pascal` and `./pascal`).
+- For Windows, get the latest release [here](https://github.com/ladnik/pascal/releases/latest/download/windows-amd64.zip), unpack it and run _pascal.exe_.
+- For Linux, get the latest release [here](https://github.com/ladnik/pascal/releases/latest/download/linux-amd64.zip), unpack it and run _pascal_ (or open it in a terminal and run `chmod +x pascal` and `./pascal`).
 
 
 ## Examples
@@ -44,3 +44,6 @@ Further details are explained in the code's comments.
 2. Borders and numbers not displayed, color scheme 1, mod 3
 
 ![program screenshot 2](https://raw.githubusercontent.com/ladnik/pascal/master/data/pascal_2.jpg "program screenshot")
+
+## Sources and further notes
+The keyboard and mouse icons are taken from Xelu's icon pack. [[Source]](https://thoseawesomeguys.com/prompts/)
