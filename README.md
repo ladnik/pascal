@@ -32,7 +32,7 @@ Further details are explained in the code's comments.
 
 ### Executing the exported executables
 - For Windows, get the latest release [here](https://github.com/ladnik/pascal/releases/latest/download/windows-amd64.zip), unpack it and run _pascal.exe_.
-- For Linux, get the latest release [here](https://github.com/ladnik/pascal/releases/latest/download/linux-amd64.tar.gz), unpack it and run _pascal_ (or open it in a terminal and run `chmod +x pascal` and `./pascal`).
+- For Linux, get the latest release [here](https://github.com/ladnik/pascal/releases/latest/download/linux-amd64.tar.gz), unpack it and run _pascal_ (or open it in a terminal and run `chmod +x pascal` and `./pascal`). If you haven't installed Java yet, install the correct JRE and JDK for your system through your package manager.
 
 
 ## Examples
