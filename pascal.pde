@@ -5,7 +5,7 @@ int rectWidth = 20, rectHeight = 20;
 int MAX_DIVISOR = 10;                       //maximum modulo divisor that should be used
 int MAX_N_ROWS = 675;                       //max number of rows which should be displayed
 
-String[][] binomials = new String[0][];
+int[][][] binomials = new int[MAX_DIVISOR][0][];
 
 PImage imgControls;                         //controls instruction image
 
@@ -71,9 +71,9 @@ void drawBoxes(int nRows, int mod)
     {
     //As computing the binomial coefficients is slow, only compute it once a
     //bigger row count than the current length is requested
-    if (nRows > binomials.length) {
-        binomials = new String[nRows][];    
-        generateBinomials(nRows, binomials);
+    if (nRows > binomials[mod].length) {
+        binomials[mod] = new int[nRows][];    
+        generateBinomials(nRows, mod, binomials);
     }
     
     //Drawing the boxes
@@ -83,16 +83,12 @@ void drawBoxes(int nRows, int mod)
             float x = startX + j * rectWidth;
             float y = rectHeight * i;
             
-            int colorNum = int(Long.parseLong(binomials[i - 1][j]) % mod);
+            int colorNum = binomials[mod][i - 1][j];
             
             int filler = int(map(colorNum, 0, mod - 1, 0, 250));
             int fillerR = int(map(colorNum, 0, mod - 1, 128, 250));
             int fillerG = int(map(colorNum, 0, mod - 1, 128, 250));
             int fillerB = int(map(colorNum, 0, mod - 1, 128, 250));
-            
-            if (colorNum < 0)
-                //print("\ni: " + i + ", j: " + j + " " + int(binomials[i - 1][j]));
-               ;
             
             switch(colorMode) {
                 case 0:
@@ -119,7 +115,7 @@ void drawBoxes(int nRows, int mod)
                 fill(0);
                 textAlign(CENTER, CENTER);
                 textSize(rectHeight / 2);
-                text(binomials[i - 1][j], x,y, rectWidth, rectHeight);
+                text(String.valueOf(binomials[mod][i - 1][j]), x,y, rectWidth, rectHeight);
             }
         }
     }
@@ -130,7 +126,7 @@ void drawBoxes(int nRows, int mod)
     
 }
 
-void generateBinomials(int nRows, String[][] binomTbl) {
+void generateBinomials(int nRows, int mod, int[][][] binomTbl) {
     //Generates Pascal's triangle which looks like this:
     //1
     //1 1
@@ -142,25 +138,25 @@ void generateBinomials(int nRows, String[][] binomTbl) {
     //Very slow, should be improved further, with bigger data types to compute more rows
     
     //binomTbl is an array of string arrays in which the binomial coefficients are stored                     
-    binomTbl[0] = new String[]{"1"};
-    binomTbl[1] = new String[]{"1","1"};
+    binomTbl[mod][0] = new int[]{1};
+    binomTbl[mod][1] = new int[]{1,1};
     
     for (int i = 2; i < nRows; ++i) {
-        int prevLen = binomTbl[i - 1].length;
-        String[]row = new String[prevLen + 1];
+        int prevLen = binomTbl[mod][i - 1].length;
+        int[]row = new int[prevLen + 1];
         
         //Add a "1" to start and end
-        row[0] = "1";
-        row[prevLen] = "1";
+        row[0] = 1;
+        row[prevLen] = 1;
         
         //Fill up the values in between with the sum of the two values (left, right) of the previous row
         for (int j = 0; j < prevLen - 1; ++j) {
-            long left = Long.parseLong(binomTbl[i - 1][j] + "");
-            long right = Long.parseLong(binomTbl[i - 1][j + 1] + "");
-            row[1 + j] = Long.toString(left + right);
+            int left = binomTbl[mod][i - 1][j];
+            int right = binomTbl[mod][i - 1][j + 1];
+            row[1 + j] = (left + right)%mod;
         }
         
-        binomTbl[i] = row;
+        binomTbl[mod][i] = row;
     }
 }
 
